@@ -1,5 +1,7 @@
 # goreactive - reactive template variables with WebSockets
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/antvirf/goreactive.svg)](https://pkg.go.dev/github.com/antvirf/goreactive)
+
 `goreactive` allows you to build web applications such as dashboards that update in real-time without writing any JavaScript. Use standard Go templates, embed them with `ReactiveVar` objects and the library takes care of the rest. Updates are pushed to clients over Websockets.
 
 See the [example](./example/) folder for a runnable example.
