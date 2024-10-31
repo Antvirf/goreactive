@@ -1,4 +1,4 @@
-module gitub.com/antvirf/goreactive
+module github.com/antvirf/goreactive
 
 go 1.22.4
 
