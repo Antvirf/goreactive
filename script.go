@@ -1,7 +1,7 @@
 package goreactive
 
 // This constant provides the script block for HTML pages to connect to desired websocket.
-var (
+const (
 	WebsocketJavascriptBlock = `
       <script>
     const socket = new WebSocket("ws://"+location.host+"/reactiveVarsWebsocket");
