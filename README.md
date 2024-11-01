@@ -84,6 +84,7 @@ func main() {
   - Review 'nicer'/proper ways to handle closing the messageBroker channel etc. when the application is stopped
   - Some way to customise the printing format of variables, or allow further customisation of what is sent to the client
   - Tests + load tests (how many websocket subscriptions can we handle?)
+  - Customisable/passable logger to get information out from the package
 - Client-side
   - Inform client on error/disconnect
   - Automatic attempts to redirect to client
