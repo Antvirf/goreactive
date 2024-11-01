@@ -18,15 +18,15 @@ func init() {
 
 // ReactiveVar stores string data in a concurrency-safe way.
 type ReactiveVar struct {
-	identifier string
-	value      string
+	Identifier string
+	Value      string
 	mu         sync.Mutex
 }
 
 func NewReactiveVar(value string) *ReactiveVar {
 	return &ReactiveVar{
-		identifier: uuid.NewString(),
-		value:      value,
+		Identifier: uuid.NewString(),
+		Value:      value,
 	}
 }
 
@@ -35,15 +35,15 @@ func (r *ReactiveVar) Update(newValue string) {
 	r.mu.Lock()
 	defer r.mu.Unlock()
 
-	r.value = newValue
+	r.Value = newValue
 	updateBroker.publish(
 		channelPayload{
-			Key:   r.identifier,
-			Value: r.value, // Read new val from object itself
+			Key:   r.Identifier,
+			Value: r.Value, // Read new val from object itself
 		})
 }
 
 // String formats the ReactiveVar as a HTML span for direct usage in HTML templates.
 func (r *ReactiveVar) String() string {
-	return fmt.Sprintf(`<span id="%s">%s</span>`, r.identifier, r.value)
+	return fmt.Sprintf(`<span id="%s">%s</span>`, r.Identifier, r.Value)
 }
