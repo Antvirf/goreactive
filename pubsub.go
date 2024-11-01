@@ -1,7 +1,6 @@
 package goreactive
 
 import (
-	"log"
 	"sync"
 )
 
@@ -71,7 +70,6 @@ func (b *messageBroker) unsubscribe(listenerId string) {
 		return
 	}
 	delete(b.subscribers, listenerId)
-	log.Printf("unsubbed: %s", listenerId)
 }
 
 // closes the messageBroker, and all its active channels.

@@ -11,7 +11,6 @@ import (
 
 func WebsocketServerHandler(w http.ResponseWriter, r *http.Request) {
 	c, err := websocket.Accept(w, r, nil)
-	log.Printf("accepted connection from: %s", r.RemoteAddr)
 	if err != nil {
 		log.Printf("error for client connecting from %s: %s", r.RemoteAddr, err)
 	}
